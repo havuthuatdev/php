@@ -10,18 +10,25 @@ $db = new mysqli("localhost","root" , "","hocsinh21" );
 // $db->query($sql);
 $qr = mysqli_query($db,"select *from hs");
 ?>
-
-<h1>Thong tin hoc sinh </h1>
-<p><a href="add_test.php">Them hoc sinh</a></p>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+</head>
+<body>
+<h1>THÔNG TIN HỌC SINH</h1>
+<p><a href="add_test.php">Thêm học sinh</a></p>
 
 <table border="1" width="500px">
 	<tr>
-		<th>Stt</th>
-		<th>Ten</th>
-		<th>Diem Java</th>
-		<th>Diem C</th>
-		<th>DTB</th>
-		<th>Action</th>
+		<th>STT</th>
+		<th>Tên</th>
+		<th>Điểm Java</th>
+		<th>Điểm C</th>
+		<th>ĐTB</th>
+		<th>Chọn</th>
+		<!-- <i class="fa fa-trash"></i> -->
 	</tr>
 	<?php  
 		while ($ur = mysqli_fetch_array($qr)) {
@@ -33,10 +40,13 @@ $qr = mysqli_query($db,"select *from hs");
 			echo "<td>".$ur["dtb"]."</td>";
 
 			echo "<td> 
-			        <a href ='update_test.php?id=".$ur['id']."' >Sua</a> | 
-			        <a href ='delete_test.php?id=".$ur['id']."' >Xoa</a>
+			        <a href ='update_test.php?id=".$ur['id']."' >Sửa</a> |
+			        <a href ='delete_test.php?id=".$ur['id']."' >Xoá</a>
 			     </td>";
 			echo "</tr>";
 		}
 	?>
 </table>
+
+</body>
+</html>

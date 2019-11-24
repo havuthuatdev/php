@@ -10,7 +10,6 @@ mysqli_select_db($conn,"hocsinh21")or die("ket noi khong thanh cong");
 $mr = mysqli_query($conn,"insert into hs(name, score_java,score_c,dtb) values('$ten','$diemJava','$diemC','$dtb')") or die("khong them duoc");
 if ($mr) {
 	header("location: test.php");
-	# code...
 }
 
 ?>
