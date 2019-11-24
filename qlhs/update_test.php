@@ -11,8 +11,8 @@ $chinhsua = mysqli_fetch_array($mr);
 <link rel="stylesheet" type="text/css" href="style.css">
 <form action='xl_update.php?id=<?php echo $chinhsua['id']?>' method="post">
 <p>Tên: </p><input type="text" name="ten" value="<?php echo $chinhsua['name'];  ?>">
-<p>Điểm Java:</p> <input type="number" name="diemJava" value="<?php echo $chinhsua['score_java'];  ?>" required="">
-<p>Điểm C:</p> <input type="number" name="diemC" value="<?php echo $chinhsua['score_c'];  ?>" required="">
+<p>Điểm Java:</p> <input type="number" name="diemJava" min="0" max="10" value="<?php echo $chinhsua['score_java'];  ?>" required="">
+<p>Điểm C:</p> <input type="number" min="0" max="10"name="diemC" value="<?php echo $chinhsua['score_c'];  ?>" required="">
 
 <p><input type="submit" name="" class="button" value="Sửa"></p>
 </form>
