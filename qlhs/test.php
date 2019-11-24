@@ -14,7 +14,7 @@ $qr = mysqli_query($db,"select *from hs");
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <h1>THÔNG TIN HỌC SINH</h1>
@@ -28,7 +28,6 @@ $qr = mysqli_query($db,"select *from hs");
 		<th>Điểm C</th>
 		<th>ĐTB</th>
 		<th>Chọn</th>
-		<!-- <i class="fa fa-trash"></i> -->
 	</tr>
 	<?php  
 		while ($ur = mysqli_fetch_array($qr)) {
@@ -40,8 +39,12 @@ $qr = mysqli_query($db,"select *from hs");
 			echo "<td>".$ur["dtb"]."</td>";
 
 			echo "<td> 
-			        <a href ='update_test.php?id=".$ur['id']."' >Sửa</a> |
-			        <a href ='delete_test.php?id=".$ur['id']."' >Xoá</a>
+			        <a href ='update_test.php?id=".$ur['id']."' >
+			        <i class='fa fa-edit'></i>
+			        </a> |
+			        <a href ='delete_test.php?id=".$ur['id']."' >
+			        <i class='fa fa-trash'></i>
+			        </a>
 			     </td>";
 			echo "</tr>";
 		}
